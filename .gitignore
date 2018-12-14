@@ -10,3 +10,8 @@ java-study-api/mvnw.cmd
 java-study-api/target/
 java-study-common/target/
 java-study-common/java-study-common.iml
+java-study-task/java-study-task.iml
+java-study-task/mvnw
+java-study-task/mvnw.cmd
+java-study-task/.mvn/
+java-study-task/target/
