@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class XmlJxController {
     @ApiOperation(value = "xml报文解析", notes = "xml报文解析")
     @RequestMapping(value = "/xmlabout", method = RequestMethod.POST)
-    public ResultData xmlabout(){
+    public ResultData xmlabout() {
         ResultData resultData = new ResultData();
         try {
             String responseXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
@@ -44,13 +44,15 @@ public class XmlJxController {
             xs.alias("head", Head.class);
             xs.alias("body", Body.class);
             xs.alias("userInfos", UserInfo.class);
-            xs.processAnnotations(new Class[] { Data.class,Head.class,Body.class,UserInfo.class });
+            xs.processAnnotations(new Class[]{Data.class, Head.class, Body.class, UserInfo.class});
             Object obj = xs.fromXML(responseXml);
-            Data data = (Data)obj;
+            Data data = (Data) obj;
+            xs.processAnnotations(data.getClass());
+            System.out.println(xs.toXML(data));
             resultData.setData(data);
             resultData.setCode(ReturnCode.RES_SUCCESS);
             resultData.setMsg("成功！");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
             resultData.setCode(ReturnCode.RES_FAILED);
             resultData.setMsg("失败！");

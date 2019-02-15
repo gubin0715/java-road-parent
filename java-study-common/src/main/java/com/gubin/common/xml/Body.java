@@ -1,18 +1,13 @@
 package com.gubin.common.xml;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 public class Body {
-    @XStreamImplicit(itemFieldName = "userInfos")
+    @XStreamImplicit(itemFieldName="userInfos")
     private List<UserInfo> userInfos;
-
-    public List<UserInfo> getUserInfos() {
-        return userInfos;
-    }
-
-    public void setUserInfos(List<UserInfo> userInfos) {
-        this.userInfos = userInfos;
-    }
 }
