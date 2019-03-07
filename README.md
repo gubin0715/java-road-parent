@@ -19,9 +19,6 @@
 1. 工具类
 2. 静态方法类
 
-##### dubbo相关模块
-1. 整合dubbo分布式微服务框架
-
 #### 软件架构
 springboot、jpa、mybatis、swagger、druid、redis、dubbo
 
