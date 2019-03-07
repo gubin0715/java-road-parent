@@ -1,4 +1,4 @@
-package com.gubin.common;
+package com.gubin.common.util;
 
 /**
  * @Description:

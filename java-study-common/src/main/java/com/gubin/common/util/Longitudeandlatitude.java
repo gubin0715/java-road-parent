@@ -1,4 +1,4 @@
-package com.gubin.common;
+package com.gubin.common.util;
 
 public class Longitudeandlatitude {
     private static double EARTH_RADIUS = 6378.137;

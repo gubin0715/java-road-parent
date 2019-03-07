@@ -1,7 +1,7 @@
 package com.gubin.api.controller;
 
-import com.gubin.common.ResultData;
-import com.gubin.common.ReturnCode;
+import com.gubin.common.util.ResultData;
+import com.gubin.common.util.ReturnCode;
 import com.gubin.common.xml.Body;
 import com.gubin.common.xml.Data;
 import com.gubin.common.xml.Head;

@@ -1,8 +1,8 @@
 package com.gubin.api.controller;
 
-import com.gubin.common.Longitudeandlatitude;
-import com.gubin.common.ResultData;
-import com.gubin.common.ReturnCode;
+import com.gubin.common.util.Longitudeandlatitude;
+import com.gubin.common.util.ResultData;
+import com.gubin.common.util.ReturnCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

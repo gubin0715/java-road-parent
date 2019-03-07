@@ -1,7 +1,7 @@
 package com.gubin.api.controller;
 
-import com.gubin.common.ResultData;
-import com.gubin.common.ReturnCode;
+import com.gubin.common.util.ResultData;
+import com.gubin.common.util.ReturnCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;

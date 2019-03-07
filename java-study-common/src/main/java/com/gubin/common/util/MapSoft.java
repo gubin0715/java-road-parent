@@ -1,4 +1,4 @@
-package com.gubin.common;
+package com.gubin.common.util;
 
 import java.util.*;
 
