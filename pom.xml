@@ -21,6 +21,7 @@
         <module>java-study-common</module>
         <module>java-study-api</module>
         <module>java-study-task</module>
+        <module>java-study-rabbitmq</module>
     </modules>
 
     <dependencyManagement>
@@ -38,6 +39,11 @@
             <dependency>
                 <groupId>com.gubin</groupId>
                 <artifactId>java-study-task</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gubin</groupId>
+                <artifactId>java-study-rabbitmq</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!-- zookeeper的客户端依赖 -->

@@ -30,3 +30,4 @@ java-study-dubbo-provider/.mvn/
 java-study-dubbo-provider/target/
 java-study-dubbo-provider/java-study-dubbo-provider.iml
 java-study-dubbo-consumer/java-study-dubbo-consumer.iml
+java-study-rabbitmq/.gitignore
