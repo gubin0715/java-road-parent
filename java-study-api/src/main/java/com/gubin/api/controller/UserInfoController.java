@@ -1,23 +1,24 @@
 package com.gubin.api.controller;
 
-import com.gubin.api.domain.UserInfo;
-import com.gubin.api.service.UserInfoService;
+import com.gubin.common.entity.UserInfo;
 import com.gubin.common.util.ResultData;
 import com.gubin.common.util.ReturnCode;
+import com.gubin.service.UserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
+
 
 @RestController
 @Api(value = "UserInfoController",description = "用户信息相关")
 public class UserInfoController {
 
-    @Autowired
+    @Resource
     private UserInfoService userInfoService;
 
     /**

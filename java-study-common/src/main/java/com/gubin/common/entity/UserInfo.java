@@ -1,4 +1,5 @@
-package com.gubin.api.domain;
+package com.gubin.common.entity;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -38,83 +39,83 @@ public class UserInfo implements Serializable {
     private String weixin;
 
     public Integer getId(){
-         return id;
+        return id;
     }
 
     public void setId(Integer id){
-         this.id=id;
+        this.id=id;
     }
 
     public String getAccount(){
-         return account;
+        return account;
     }
 
     public void setAccount(String account){
-         this.account=account;
+        this.account=account;
     }
 
     public String getPassword(){
-         return password;
+        return password;
     }
 
     public void setPassword(String password){
-         this.password=password;
+        this.password=password;
     }
 
     public String getRealname(){
-         return realname;
+        return realname;
     }
 
     public void setRealname(String realname){
-         this.realname=realname;
+        this.realname=realname;
     }
 
     public String getAddress(){
-         return address;
+        return address;
     }
 
     public void setAddress(String address){
-         this.address=address;
+        this.address=address;
     }
 
     public String getId_number(){
-         return id_number;
+        return id_number;
     }
 
     public void setId_number(String id_number){
-         this.id_number=id_number;
+        this.id_number=id_number;
     }
 
     public Integer getSex(){
-         return sex;
+        return sex;
     }
 
     public void setSex(Integer sex){
-         this.sex=sex;
+        this.sex=sex;
     }
 
     public String getPhone(){
-         return phone;
+        return phone;
     }
 
     public void setPhone(String phone){
-         this.phone=phone;
+        this.phone=phone;
     }
 
     public String getQq(){
-         return qq;
+        return qq;
     }
 
     public void setQq(String qq){
-         this.qq=qq;
+        this.qq=qq;
     }
 
     public String getWeixin(){
-         return weixin;
+        return weixin;
     }
 
     public void setWeixin(String weixin){
-         this.weixin=weixin;
+        this.weixin=weixin;
     }
 
 }

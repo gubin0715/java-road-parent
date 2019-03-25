@@ -31,3 +31,8 @@ java-study-dubbo-provider/target/
 java-study-dubbo-provider/java-study-dubbo-provider.iml
 java-study-dubbo-consumer/java-study-dubbo-consumer.iml
 java-study-rabbitmq/.gitignore
+java-study-rabbitmq/java-study-rabbitmq.iml
+java-study-repository/java-study-repository.iml
+java-study-service/java-study-service.iml
+java-study-repository/target/
+java-study-service/target/

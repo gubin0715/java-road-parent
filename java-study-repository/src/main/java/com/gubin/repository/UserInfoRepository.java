@@ -1,6 +1,6 @@
-package com.gubin.api.repository;
+package com.gubin.repository;
 
-import com.gubin.api.domain.UserInfo;
+import com.gubin.common.entity.UserInfo;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

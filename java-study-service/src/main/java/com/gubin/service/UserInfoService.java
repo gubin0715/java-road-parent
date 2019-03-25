@@ -1,6 +1,6 @@
-package com.gubin.api.service;
+package com.gubin.service;
 
-import com.gubin.api.domain.UserInfo;
+import com.gubin.common.entity.UserInfo;
 
 import java.util.List;
 
