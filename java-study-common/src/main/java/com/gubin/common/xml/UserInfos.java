@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @XStreamAlias("userInfos")
-public class UserInfo {
+public class UserInfos {
     private String name;
     private String phone;
 }
