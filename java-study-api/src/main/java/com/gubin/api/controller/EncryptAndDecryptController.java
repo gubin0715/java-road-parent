@@ -1,6 +1,9 @@
 package com.gubin.api.controller;
 
-import com.gubin.common.util.*;
+import com.gubin.common.dto.ResponseDto;
+import com.gubin.common.util.Hmac_Sha1Util;
+import com.gubin.common.util.JdkBase64Util;
+import com.gubin.common.util.RsaUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +16,7 @@ public class EncryptAndDecryptController {
 
     @ApiOperation(value = "Rsa、HMAC-SHA1加密，Base64、url编码", notes = "Rsa、HMAC-SHA1加密，Base64、url编码")
     @RequestMapping(value = "/encryptAndDecrypt", method = RequestMethod.POST)
-    public ResultData encryptanddecrypt() {
-        ResultData resultData = new ResultData();
+    public ResponseDto encryptanddecrypt() {
         try {
             /**
              * Rsa加密解密
@@ -54,13 +56,10 @@ public class EncryptAndDecryptController {
             System.out.println("==============Base64编码前=============" + data3);
             data3 = JdkBase64Util.jdkBas64Encode(data3);
             System.out.println("==============Base64编码后=============" + data3);
-            resultData.setMsg("成功！");
-            resultData.setCode(ReturnCode.RES_SUCCESS);
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
+        return ResponseDto.SUCCESS();
     }
 }

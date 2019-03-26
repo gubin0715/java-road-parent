@@ -1,11 +1,13 @@
 package com.gubin.common.entity;
 
 import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
-@Entity@Table(name="user_info")
+@Entity
+@Table(name = "user_info")
 public class UserInfo implements Serializable {
 
     @Id

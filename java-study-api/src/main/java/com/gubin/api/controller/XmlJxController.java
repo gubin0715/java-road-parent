@@ -1,7 +1,6 @@
 package com.gubin.api.controller;
 
-import com.gubin.common.util.ResultData;
-import com.gubin.common.util.ReturnCode;
+import com.gubin.common.dto.ResponseDto;
 import com.gubin.common.xml.Body;
 import com.gubin.common.xml.Data;
 import com.gubin.common.xml.Head;
@@ -18,8 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class XmlJxController {
     @ApiOperation(value = "xml报文解析", notes = "xml报文解析")
     @RequestMapping(value = "/xmlabout", method = RequestMethod.POST)
-    public ResultData xmlabout() {
-        ResultData resultData = new ResultData();
+    public ResponseDto xmlabout() {
         try {
             String responseXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                     "<data>\n" +
@@ -49,14 +47,10 @@ public class XmlJxController {
             Data data = (Data) obj;
             xs.processAnnotations(data.getClass());
             System.out.println(xs.toXML(data));
-            resultData.setData(data);
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setMsg("成功！");
+            return ResponseDto.SUCCESSDATA(data);
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
     }
 }

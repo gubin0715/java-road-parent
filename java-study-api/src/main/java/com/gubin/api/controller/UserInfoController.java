@@ -1,8 +1,7 @@
 package com.gubin.api.controller;
 
+import com.gubin.common.dto.ResponseDto;
 import com.gubin.common.entity.UserInfo;
-import com.gubin.common.util.ResultData;
-import com.gubin.common.util.ReturnCode;
 import com.gubin.service.UserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -15,7 +14,7 @@ import java.util.List;
 
 
 @RestController
-@Api(value = "UserInfoController",description = "用户信息相关")
+@Api(value = "UserInfoController", description = "用户信息相关")
 public class UserInfoController {
 
     @Resource
@@ -23,22 +22,18 @@ public class UserInfoController {
 
     /**
      * 用户信息列表
+     *
      * @return
      */
-    @RequestMapping(value = "/userInfoList",method = RequestMethod.POST)
-    @ApiOperation(value = "用户信息列表",notes = "用户信息列表")
-    public ResultData userInfoList(){
-        ResultData resultData = new ResultData();
+    @RequestMapping(value = "/userInfoList", method = RequestMethod.POST)
+    @ApiOperation(value = "用户信息列表", notes = "用户信息列表")
+    public ResponseDto userInfoList() {
         try {
             List<UserInfo> userInfoList = userInfoService.getUserInfoByList();
-            resultData.setData(userInfoList);
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setMsg("成功！");
-        }catch (Exception e){
+            return ResponseDto.SUCCESSDATA(userInfoList);
+        } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
     }
 }

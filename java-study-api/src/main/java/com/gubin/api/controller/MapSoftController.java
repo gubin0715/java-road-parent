@@ -1,8 +1,7 @@
 package com.gubin.api.controller;
 
+import com.gubin.common.dto.ResponseDto;
 import com.gubin.common.util.MapSoft;
-import com.gubin.common.util.ResultData;
-import com.gubin.common.util.ReturnCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +21,7 @@ public class MapSoftController {
      */
     @RequestMapping(value = "/mapSoft", method = RequestMethod.POST)
     @ApiOperation(value = "map排序", notes = "map排序")
-    public ResultData mapsoft() {
-        ResultData resultData = new ResultData();
+    public ResponseDto mapsoft() {
         try {
             Map<String, String> map = new HashMap<>();
             map.put("a", "3");
@@ -36,15 +34,11 @@ public class MapSoftController {
             Map zo = new HashMap();
             zo.put("esc", esc);
             zo.put("desc", desc);
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setMsg("成功！");
-            resultData.setData(zo);
+            return ResponseDto.SUCCESSDATA(zo);
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
     }
 
     /**
@@ -54,8 +48,7 @@ public class MapSoftController {
      */
     @RequestMapping(value = "/mapListSoft", method = RequestMethod.POST)
     @ApiOperation(value = "maplist排序", notes = "maplist排序")
-    public ResultData maplistsoft() {
-        ResultData resultData = new ResultData();
+    public ResponseDto maplistsoft() {
         try {
             List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
             Map<String, Object> map1 = new HashMap<String, Object>();
@@ -86,14 +79,11 @@ public class MapSoftController {
             for (Map<String, Object> map : list) {
                 System.out.println(map.get("distance"));
             }
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setMsg("成功！");
+            return ResponseDto.SUCCESS();
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
     }
 
     /**
@@ -103,8 +93,7 @@ public class MapSoftController {
      */
     @RequestMapping(value = "/mapOut", method = RequestMethod.POST)
     @ApiOperation(value = "map遍历", notes = "map遍历")
-    public ResultData mapOut() {
-        ResultData resultData = new ResultData();
+    public ResponseDto mapOut() {
         try {
             Map map = new LinkedHashMap();
             map.put("a", "aaa");
@@ -125,13 +114,10 @@ public class MapSoftController {
                 String value = (String) map.get(key);
                 System.out.println("==========增强for遍历map方式===========" + key + "=" + value);
             }
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setMsg("成功！");
+            return ResponseDto.SUCCESS();
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
     }
 }

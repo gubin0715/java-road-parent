@@ -1,7 +1,6 @@
 package com.gubin.api.controller;
 
-import com.gubin.common.util.ResultData;
-import com.gubin.common.util.ReturnCode;
+import com.gubin.common.dto.ResponseDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +22,7 @@ public class DateAboutController {
      */
     @ApiOperation(value = "日期相关转换及计算", notes = "日期相关转换及计算")
     @RequestMapping(value = "/dateabout", method = RequestMethod.POST)
-    public ResultData dateabout() {
-        ResultData resultData = new ResultData();
+    public ResponseDto dateabout() {
         try {
             /**
              * 格式化时间为（年-月-日 时：分：秒）
@@ -78,14 +76,10 @@ public class DateAboutController {
             calendar.setTime(ymd.parse(ymd.format(dateafter)));
             calendar.add(calendar.DATE, 1);//把日期往后推一天.整数往后推,负数往前移动
             System.out.println("日期往前后一天======" + ymd.format(calendar.getTime()));
-            //返回数据
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setMsg("成功！");
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
+        return ResponseDto.SUCCESS();
     }
 }

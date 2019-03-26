@@ -1,7 +1,6 @@
 package com.gubin.api.controller;
 
-import com.gubin.common.util.ResultData;
-import com.gubin.common.util.ReturnCode;
+import com.gubin.common.dto.ResponseDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +23,7 @@ public class StringAboutController {
      */
     @RequestMapping(value = "/aboutString", method = RequestMethod.POST)
     @ApiOperation(value = "UUID、随机整数、截取、是否包含", notes = "UUID、随机整数、截取、是否包含")
-    public ResultData aboutString() {
-        ResultData resultData = new ResultData();
+    public ResponseDto aboutString() {
         try {
             /**
              * 生成UUID
@@ -49,13 +47,10 @@ public class StringAboutController {
             boolean resutl = str.contains(",");
             System.out.println(resutl);
             //返回数据
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setMsg("成功！");
+            return ResponseDto.SUCCESS();
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
     }
 }

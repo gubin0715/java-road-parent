@@ -1,8 +1,7 @@
 package com.gubin.api.controller;
 
+import com.gubin.common.dto.ResponseDto;
 import com.gubin.common.util.Longitudeandlatitude;
-import com.gubin.common.util.ResultData;
-import com.gubin.common.util.ReturnCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -34,22 +33,17 @@ public class LongitudeAndLatitudeController {
             @ApiImplicitParam(name = "lng2", value = "经度一", dataType = "string", required = true, paramType = "query")
     })
     @RequestMapping(value = "/getDistance", method = RequestMethod.POST)
-    public ResultData getdistance(@RequestParam("lat1") String lat1,     //纬度一
-                                  @RequestParam("lng1") String lng1,     //经度一
-                                  @RequestParam("lat2") String lat2,     //纬度二
-                                  @RequestParam("lng2") String lng2) {    //经度二
-        ResultData resultData = new ResultData();
+    public ResponseDto getdistance(@RequestParam("lat1") String lat1,     //纬度一
+                                   @RequestParam("lng1") String lng1,     //经度一
+                                   @RequestParam("lat2") String lat2,     //纬度二
+                                   @RequestParam("lng2") String lng2) {    //经度二
         try {
             double distance = Longitudeandlatitude.getDistance(Double.parseDouble(lat1), Double.parseDouble(lng1), Double.parseDouble(lat2), Double.parseDouble(lng2));//你们的距离
             System.out.println("距离" + distance / 1000 + "公里");
-            resultData.setCode(ReturnCode.RES_SUCCESS);
-            resultData.setData("距离" + distance / 1000 + "公里");
-            resultData.setMsg("成功！");
+            return ResponseDto.SUCCESSDATA(distance / 1000);
         } catch (Exception e) {
             System.out.println(e.toString());
-            resultData.setCode(ReturnCode.RES_FAILED);
-            resultData.setMsg("失败！");
+            return ResponseDto.ERROR();
         }
-        return resultData;
     }
 }
