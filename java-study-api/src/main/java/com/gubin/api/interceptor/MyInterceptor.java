@@ -11,6 +11,9 @@ public class MyInterceptor implements HandlerInterceptor {
     // 进入controller之前
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
+        if(httpServletRequest.getHeader("token")!=null){
+            return false;
+        }
         System.out.println("拦截器拦截到");
         return true;    //如果false，停止流程，api被拦截
     }
