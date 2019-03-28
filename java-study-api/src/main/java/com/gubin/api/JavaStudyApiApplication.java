@@ -12,10 +12,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @ServletComponentScan
 @SpringBootApplication
+@EnableDiscoveryClient
 @ComponentScan(basePackages = {"com.gubin"})
 @EnableJpaRepositories(basePackages = {"com.gubin.repository"})
 @EntityScan(basePackages = {"com.gubin.common.entity"})
-@EnableDiscoveryClient
 public class JavaStudyApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(JavaStudyApiApplication.class, args);
