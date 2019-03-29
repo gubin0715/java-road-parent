@@ -12,6 +12,7 @@ swagger、
 rabbitmq、
 nacos、
 scheduler、
+kafka
 
 #### 码云特技
 
