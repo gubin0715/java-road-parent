@@ -1,4 +1,4 @@
-package com.gubin.rabbitmq.config;
+package com.gubin.api.rabbitmq.config;
 
 
 import org.slf4j.Logger;
@@ -12,13 +12,15 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RabbitListener(queues = RabbitConfig.QUEUE_A)
-public class MsgReceiver {
+public class MsgReceiverRe {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    private Integer count = 0;
     @RabbitHandler
     public void process(String content) {
-        logger.info("接收处理队列A当中的消息： " + content);
+        logger.info("复制处理器接收处理队列A当中的消息： " + content);
+        count++;
+        System.out.println("======================"+count);
     }
 
 }

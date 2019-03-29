@@ -19,8 +19,6 @@
     <modules>
         <module>java-study-common</module>
         <module>java-study-api</module>
-        <module>java-study-task</module>
-        <module>java-study-rabbitmq</module>
         <module>java-study-service</module>
         <module>java-study-repository</module>
     </modules>
@@ -41,16 +39,6 @@
             <dependency>
                 <groupId>com.gubin</groupId>
                 <artifactId>java-study-api</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.gubin</groupId>
-                <artifactId>java-study-task</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.gubin</groupId>
-                <artifactId>java-study-rabbitmq</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -81,15 +69,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
     <repositories>
         <repository>

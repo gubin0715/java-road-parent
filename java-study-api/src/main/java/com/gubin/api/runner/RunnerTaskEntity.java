@@ -1,9 +1,8 @@
-package com.gubin.task.runner;
+package com.gubin.api.runner;
 
-import com.gubin.task.task.TaskTestOne;
-import com.gubin.task.task.TaskTestTwo;
+import com.gubin.api.task.TaskTestOne;
+import com.gubin.api.task.TaskTestTwo;
 import org.quartz.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.UUID;
 
-@Component
+/*@Component*/
 public class RunnerTaskEntity implements ApplicationRunner {
 
     @Resource

@@ -1,4 +1,4 @@
-package com.gubin.task.task;
+package com.gubin.api.task;
 
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
