@@ -4,14 +4,14 @@
 springboot分模块开发
 
 #### 软件架构
-springboot
-spring data jpa
-druid
-redis
-swagger
-rabbitmq
-nacos
-scheduler
+springboot、
+spring data jpa、
+druid、
+redis、
+swagger、
+rabbitmq、
+nacos、
+scheduler、
 
 #### 码云特技
 

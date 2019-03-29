@@ -1,4 +1,4 @@
-package com.gubin.api.rabbitmq.config;
+package com.gubin.api.config.rabbitmq;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

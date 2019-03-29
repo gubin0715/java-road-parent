@@ -1,6 +1,6 @@
 package com.gubin.api.controller;
 
-import com.gubin.api.rabbitmq.config.MsgProducer;
+import com.gubin.api.config.rabbitmq.MsgProducer;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
