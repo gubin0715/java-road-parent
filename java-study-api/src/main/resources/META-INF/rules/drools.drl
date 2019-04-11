@@ -1,0 +1,13 @@
+import com.gubin.common.drools.DroolsUtil
+import com.gubin.common.drools.DroolsLog
+global java.util.List<DroolsLog> droolsLogs;
+dialect  "mvel"
+
+rule "gb001"
+    when
+        $gb :DroolsUtil(age>18)
+    then
+        DroolsLog droolsLog = new DroolsLog(true,"400","年龄超过限制");
+        System.out.println("年龄超过限制");
+        droolsLogs.add(droolsLog);
+end
