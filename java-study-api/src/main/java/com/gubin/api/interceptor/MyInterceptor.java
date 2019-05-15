@@ -20,7 +20,7 @@ public class MyInterceptor implements HandlerInterceptor {
         response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
         if (StringUtils.isEmpty(token)) {
             response.getWriter().print(JSONObject.toJSON(ResponseDto.ERRORMSG("token失效")));
-            return true;
+            return false;
         }
         return true;    //如果false，停止流程，api被拦截
     }
