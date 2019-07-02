@@ -6,6 +6,7 @@ springboot分模块开发
 #### 软件架构
 springboot、
 spring data jpa、
+mybatis、
 druid、
 redis、
 swagger、
