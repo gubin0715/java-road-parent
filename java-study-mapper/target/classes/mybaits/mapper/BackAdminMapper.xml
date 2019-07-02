@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gubin.mapper.BackAdminMapper">
+    
+    <resultMap type="com.gubin.common.domain.BackAdmin" id="BackAdminResult">
+        <result property="id"    column="id"    />
+        <result property="adminCode"    column="admin_code"    />
+        <result property="password"    column="password"    />
+        <result property="adminName"    column="admin_name"    />
+        <result property="roleId"    column="role_id"    />
+        <result property="roleName"    column="role_name"    />
+        <result property="createTime"    column="create_time"    />
+    </resultMap>
+	
+	<sql id="selectBackAdminVo">
+        select id, admin_code, password, admin_name, role_id, role_name, create_time from back_admin
+    </sql>
+	
+    <select id="selectBackAdminList" parameterType="com.gubin.common.domain.BackAdmin" resultMap="BackAdminResult">
+        <include refid="selectBackAdminVo"/>
+        <where>  
+            <if test="id != null "> and id = #{id}</if>
+             <if test="adminCode != null  and adminCode != '' "> and admin_code = #{adminCode}</if>
+             <if test="password != null  and password != '' "> and password = #{password}</if>
+             <if test="adminName != null  and adminName != '' "> and admin_name = #{adminName}</if>
+             <if test="roleId != null "> and role_id = #{roleId}</if>
+             <if test="roleName != null  and roleName != '' "> and role_name = #{roleName}</if>
+             <if test="createTime != null "> and create_time = #{createTime}</if>
+         </where>
+    </select>
+    
+    <select id="selectBackAdminById" parameterType="Integer" resultMap="BackAdminResult">
+        <include refid="selectBackAdminVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBackAdmin" parameterType="com.gubin.common.domain.BackAdmin" useGeneratedKeys="true" keyProperty="id">
+        insert into back_admin
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="adminCode != null  and adminCode != ''  ">admin_code,</if>
+			<if test="password != null  and password != ''  ">password,</if>
+			<if test="adminName != null  and adminName != ''  ">admin_name,</if>
+			<if test="roleId != null  ">role_id,</if>
+			<if test="roleName != null  and roleName != ''  ">role_name,</if>
+			<if test="createTime != null  ">create_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="adminCode != null  and adminCode != ''  ">#{adminCode},</if>
+			<if test="password != null  and password != ''  ">#{password},</if>
+			<if test="adminName != null  and adminName != ''  ">#{adminName},</if>
+			<if test="roleId != null  ">#{roleId},</if>
+			<if test="roleName != null  and roleName != ''  ">#{roleName},</if>
+			<if test="createTime != null  ">#{createTime},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateBackAdmin" parameterType="com.gubin.common.domain.BackAdmin">
+        update back_admin
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="adminCode != null  and adminCode != ''  ">admin_code = #{adminCode},</if>
+            <if test="password != null  and password != ''  ">password = #{password},</if>
+            <if test="adminName != null  and adminName != ''  ">admin_name = #{adminName},</if>
+            <if test="roleId != null  ">role_id = #{roleId},</if>
+            <if test="roleName != null  and roleName != ''  ">role_name = #{roleName},</if>
+            <if test="createTime != null  ">create_time = #{createTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteBackAdminById" parameterType="Integer">
+        delete from back_admin where id = #{id}
+    </delete>
+	
+    <delete id="deleteBackAdminByIds" parameterType="String">
+        delete from back_admin where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

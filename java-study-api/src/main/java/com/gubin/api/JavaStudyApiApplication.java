@@ -1,5 +1,6 @@
 package com.gubin.api;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -16,6 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = {"com.gubin"})
 @EnableJpaRepositories(basePackages = {"com.gubin.repository"})
 @EntityScan(basePackages = {"com.gubin.common.entity"})
+@MapperScan(basePackages = {"com.gubin.mapper"})
 public class JavaStudyApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(JavaStudyApiApplication.class, args);
