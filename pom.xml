@@ -21,6 +21,7 @@
         <module>java-study-api</module>
         <module>java-study-service</module>
         <module>java-study-repository</module>
+        <module>java-study-mapper</module>
     </modules>
 
     <dependencies>

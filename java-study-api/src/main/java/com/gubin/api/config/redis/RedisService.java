@@ -72,6 +72,10 @@ public class RedisService {
         return result;
     }
 
+    public String getJsonString(String key) {
+        return key == null ? null : (String)redisTemplate.opsForValue().get(key);
+    }
+
     /**
      * 判断redis缓存中是否有对应的key
      * @param key

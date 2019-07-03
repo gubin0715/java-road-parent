@@ -1,14 +1,15 @@
 package com.gubin.common.domain;
 
+import lombok.Data;
+
 /**
  * 后台用户表 back_admin
  * 
  * @author ruoyi
  * @date 2019-07-02
  */
+@Data
 public class BackAdmin{
-	private static final long serialVersionUID = 1L;
-	
 	/**  */
 	private Integer id;
 	/** 管理员id */
@@ -21,4 +22,6 @@ public class BackAdmin{
 	private Integer roleId;
 	/** 管理员角色名称 */
 	private String roleName;
+	/** 创建时间 */
+	private String createTime;
 }
