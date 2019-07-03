@@ -12,6 +12,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     /**
      * 注入自定义拦截类到spring容器
+     *
      * @return
      */
     @Bean
@@ -23,7 +24,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(getInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");
+                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
+                .excludePathPatterns("/testNacosData");
     }
 
     //如果swagger排除后仍被拦截，放开代码
