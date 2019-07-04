@@ -25,7 +25,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(getInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
-                .excludePathPatterns("/testNacosData");
+                .excludePathPatterns("/testNacosData")
+                .excludePathPatterns("/addBackAdminList")
+                .excludePathPatterns("/backAdminLogin");
     }
 
     //如果swagger排除后仍被拦截，放开代码
