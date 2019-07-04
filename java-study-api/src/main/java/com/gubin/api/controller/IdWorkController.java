@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api(value = "IdWorkController", description = "统一发号器")
 public class IdWorkController {
-    @ApiOperation(value = "请求统一发号器Lock锁", notes = "请求统一发号器Lock锁")
+    @ApiOperation(value = "请求统一发号器Lock锁")
     @PostMapping("/idWorkLock")
     public ResponseDto idWorkLock() {
         try {
@@ -24,7 +24,7 @@ public class IdWorkController {
         }
     }
 
-    @ApiOperation(value = "请求统一发号器Synchronized锁", notes = "请求统一发号器Synchronized锁")
+    @ApiOperation(value = "请求统一发号器Synchronized锁")
     @PostMapping("/idWorkSynchronized")
     public ResponseDto idWorkSynchronized() {
         try {

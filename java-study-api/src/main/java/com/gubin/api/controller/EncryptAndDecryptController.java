@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "EncryptAndDecryptController", description = "加密解密编码")
 public class EncryptAndDecryptController {
 
-    @ApiOperation(value = "Rsa、HMAC-SHA1加密，Base64、url编码", notes = "Rsa、HMAC-SHA1加密，Base64、url编码")
+    @ApiOperation(value = "Rsa、HMAC-SHA1加密，Base64、url编码")
     @RequestMapping(value = "/encryptAndDecrypt", method = RequestMethod.POST)
     public ResponseDto encryptanddecrypt() {
         try {

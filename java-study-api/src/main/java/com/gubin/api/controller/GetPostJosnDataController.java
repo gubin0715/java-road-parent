@@ -20,7 +20,7 @@ public class GetPostJosnDataController {
      * @return
      */
     @RequestMapping(value = "/getPostJosnData", method = RequestMethod.POST)
-    @ApiOperation(value = "获取post请求数据", notes = "获取post请求数据")
+    @ApiOperation(value = "获取post请求数据")
     public ResponseDto getPostJosnData(HttpServletRequest request) {
         try {
             //获取到post请求数据

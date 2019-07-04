@@ -15,7 +15,7 @@ public class DroolsController {
     @Autowired
     private DroolsService droolsService;
 
-    @ApiOperation(value = "drools相关测试", notes = "drools相关测试")
+    @ApiOperation(value = "drools相关测试")
     @PostMapping("/drools")
     public ResponseDto drools() {
         return droolsService.drools();

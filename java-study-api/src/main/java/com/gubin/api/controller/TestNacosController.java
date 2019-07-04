@@ -25,7 +25,7 @@ public class TestNacosController {
      * @return
      */
     @RequestMapping(value = "testNacosData", method = RequestMethod.POST)
-    @ApiOperation(value = "测试动态刷新配置数据", notes = "测试动态刷新配置数据")
+    @ApiOperation(value = "测试动态刷新配置数据")
     public ResponseDto testNacosData() {
         log.info("测试动态刷新配置数据");
         return ResponseDto.SUCCESSDATA(test_nacos_data);

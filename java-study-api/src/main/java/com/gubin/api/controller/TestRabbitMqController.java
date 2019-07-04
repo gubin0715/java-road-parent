@@ -19,7 +19,7 @@ public class TestRabbitMqController {
     @Autowired
     private MsgProducer msgProducer;
 
-    @ApiOperation(value = "rabbitmq生产消息",notes = "rabbitmq生产消息")
+    @ApiOperation(value = "rabbitmq生产消息")
     @RequestMapping(value = "rabbitMq",method = RequestMethod.POST)
     public ResponseDto rabbitMq(@RequestBody RabbitMqDto rabbitMqDto){
         try {

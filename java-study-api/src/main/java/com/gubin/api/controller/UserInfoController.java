@@ -26,7 +26,7 @@ public class UserInfoController {
      * @return
      */
     @RequestMapping(value = "/userInfoList", method = RequestMethod.POST)
-    @ApiOperation(value = "用户信息列表", notes = "用户信息列表")
+    @ApiOperation(value = "用户信息列表")
     public ResponseDto userInfoList() {
         try {
             List<UserInfo> userInfoList = userInfoService.getUserInfoByList();

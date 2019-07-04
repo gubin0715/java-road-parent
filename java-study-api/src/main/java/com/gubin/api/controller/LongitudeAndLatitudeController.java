@@ -25,7 +25,7 @@ public class LongitudeAndLatitudeController {
      * @param lng2
      * @return
      */
-    @ApiOperation(value = "根据两对经纬度计算两点之间距离", notes = "根据两对经纬度计算两点之间距离")
+    @ApiOperation(value = "根据两对经纬度计算两点之间距离")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "lat1", value = "纬度一", dataType = "string", required = true, paramType = "query"),
             @ApiImplicitParam(name = "lng1", value = "经度一", dataType = "string", required = true, paramType = "query"),

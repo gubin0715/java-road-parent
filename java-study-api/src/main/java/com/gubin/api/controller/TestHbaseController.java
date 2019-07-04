@@ -32,7 +32,7 @@ public class TestHbaseController {
     private String hbaseTableName = "testHbase";
 
     @RequestMapping(value = "/testHbase", method = RequestMethod.POST)
-    @ApiOperation(value = "测试hbase", notes = "测试hbase")
+    @ApiOperation(value = "测试hbase")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "rowKey", value = "hbase行键", dataType = "string", required = true, paramType = "query"),
             @ApiImplicitParam(name = "data", value = "hbase数据", dataType = "string", required = true, paramType = "query")

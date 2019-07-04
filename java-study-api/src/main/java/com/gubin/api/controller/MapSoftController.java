@@ -20,7 +20,7 @@ public class MapSoftController {
      * @return
      */
     @RequestMapping(value = "/mapSoft", method = RequestMethod.POST)
-    @ApiOperation(value = "map排序", notes = "map排序")
+    @ApiOperation(value = "map排序")
     public ResponseDto mapsoft() {
         try {
             Map<String, String> map = new HashMap<>();
@@ -47,7 +47,7 @@ public class MapSoftController {
      * @return
      */
     @RequestMapping(value = "/mapListSoft", method = RequestMethod.POST)
-    @ApiOperation(value = "maplist排序", notes = "maplist排序")
+    @ApiOperation(value = "maplist排序")
     public ResponseDto maplistsoft() {
         try {
             List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
@@ -92,7 +92,7 @@ public class MapSoftController {
      * @return
      */
     @RequestMapping(value = "/mapOut", method = RequestMethod.POST)
-    @ApiOperation(value = "map遍历", notes = "map遍历")
+    @ApiOperation(value = "map遍历")
     public ResponseDto mapOut() {
         try {
             Map map = new LinkedHashMap();

@@ -26,7 +26,7 @@ public class RedisController {
      * @param redisDto
      * @return
      */
-    @ApiOperation(value = "存储redis数据", notes = "存储redis数据")
+    @ApiOperation(value = "存储redis数据")
     @RequestMapping(value = "/setRedis", method = RequestMethod.POST)
     public ResponseDto setRedis(@RequestBody RedisDto redisDto) {
         try {
@@ -44,7 +44,7 @@ public class RedisController {
      * @param key
      * @return
      */
-    @ApiOperation(value = "从redis根据key取值", notes = "从redis根据key取值")
+    @ApiOperation(value = "从redis根据key取值")
     @RequestMapping(value = "/getRedis", method = RequestMethod.POST)
     @ApiImplicitParam(name = "key", value = "存储redis的key值", dataType = "string", required = true, paramType = "query")
     public ResponseDto getRedis(@RequestParam("key") String key) {

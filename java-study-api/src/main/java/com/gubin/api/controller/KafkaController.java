@@ -24,7 +24,7 @@ public class KafkaController {
     private KafkaTemplate kafkaTemplate;
 
     @RequestMapping(value = "/kafkaSend", method = RequestMethod.POST)
-    @ApiOperation(value = "发送kafka消息", notes = "发送kafka消息")
+    @ApiOperation(value = "发送kafka消息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "key", value = "kafka消息键值", dataType = "string", required = true, paramType = "query"),
             @ApiImplicitParam(name = "message", value = "kafka消息值", dataType = "string", required = true, paramType = "query")

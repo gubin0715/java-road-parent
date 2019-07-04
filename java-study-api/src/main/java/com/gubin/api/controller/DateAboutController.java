@@ -20,7 +20,7 @@ public class DateAboutController {
      *
      * @return
      */
-    @ApiOperation(value = "日期相关转换及计算", notes = "日期相关转换及计算")
+    @ApiOperation(value = "日期相关转换及计算")
     @RequestMapping(value = "/dateabout", method = RequestMethod.POST)
     public ResponseDto dateabout() {
         try {
