@@ -20,11 +20,6 @@ public class UserInfoController {
     @Resource
     private UserInfoService userInfoService;
 
-    /**
-     * 用户信息列表
-     *
-     * @return
-     */
     @RequestMapping(value = "/userInfoList", method = RequestMethod.POST)
     @ApiOperation(value = "用户信息列表")
     public ResponseDto userInfoList() {

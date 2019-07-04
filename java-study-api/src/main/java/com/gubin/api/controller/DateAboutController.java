@@ -15,11 +15,7 @@ import java.util.GregorianCalendar;
 @RestController
 @Api(value = "DateAboutController", description = "日期接口")
 public class DateAboutController {
-    /**
-     * 日期相关转换及计算
-     *
-     * @return
-     */
+
     @ApiOperation(value = "日期相关转换及计算")
     @RequestMapping(value = "/dateabout", method = RequestMethod.POST)
     public ResponseDto dateabout() {

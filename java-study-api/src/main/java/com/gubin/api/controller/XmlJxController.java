@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api(value = "XmlJxController", description = "xml报文解析")
 public class XmlJxController {
+    
     @ApiOperation(value = "xml报文解析")
     @RequestMapping(value = "/xmlabout", method = RequestMethod.POST)
     public ResponseDto xmlabout() {

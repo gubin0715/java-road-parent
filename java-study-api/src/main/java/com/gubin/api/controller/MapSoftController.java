@@ -14,13 +14,8 @@ import java.util.*;
 @Api(value = "MapSoftController", description = "map相关接口")
 public class MapSoftController {
 
-    /**
-     * map根据值正序倒序
-     *
-     * @return
-     */
     @RequestMapping(value = "/mapSoft", method = RequestMethod.POST)
-    @ApiOperation(value = "map排序")
+    @ApiOperation(value = "map根据值正序倒序")
     public ResponseDto mapsoft() {
         try {
             Map<String, String> map = new HashMap<>();
@@ -41,11 +36,6 @@ public class MapSoftController {
         }
     }
 
-    /**
-     * List<Map>排序
-     *
-     * @return
-     */
     @RequestMapping(value = "/mapListSoft", method = RequestMethod.POST)
     @ApiOperation(value = "maplist排序")
     public ResponseDto maplistsoft() {
@@ -86,11 +76,6 @@ public class MapSoftController {
         }
     }
 
-    /**
-     * map遍历
-     *
-     * @return
-     */
     @RequestMapping(value = "/mapOut", method = RequestMethod.POST)
     @ApiOperation(value = "map遍历")
     public ResponseDto mapOut() {

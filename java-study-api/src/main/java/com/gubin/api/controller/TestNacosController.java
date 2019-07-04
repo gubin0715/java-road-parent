@@ -19,11 +19,6 @@ public class TestNacosController {
     @Value("${test_nacos_data}")
     private String test_nacos_data;
 
-    /**
-     * 测试动态刷新配置数据
-     *
-     * @return
-     */
     @RequestMapping(value = "testNacosData", method = RequestMethod.POST)
     @ApiOperation(value = "测试动态刷新配置数据")
     public ResponseDto testNacosData() {

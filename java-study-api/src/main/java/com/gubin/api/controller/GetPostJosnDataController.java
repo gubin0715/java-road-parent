@@ -14,11 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 @Api(value = "GetPostJosnDataController", description = "获取post请求数据")
 public class GetPostJosnDataController {
 
-    /**
-     * 获取json格式post请求数据
-     *
-     * @return
-     */
     @RequestMapping(value = "/getPostJosnData", method = RequestMethod.POST)
     @ApiOperation(value = "获取post请求数据")
     public ResponseDto getPostJosnData(HttpServletRequest request) {

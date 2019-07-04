@@ -16,15 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/longitudeAndLatitude")
 public class LongitudeAndLatitudeController {
 
-    /**
-     * 根据两个位置的经纬度计算距离
-     *
-     * @param lat1
-     * @param lng1
-     * @param lat2
-     * @param lng2
-     * @return
-     */
     @ApiOperation(value = "根据两对经纬度计算两点之间距离")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "lat1", value = "纬度一", dataType = "string", required = true, paramType = "query"),

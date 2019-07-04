@@ -16,11 +16,6 @@ import java.util.UUID;
 @RestController
 public class StringAboutController {
 
-    /**
-     * 字符相关数据
-     *
-     * @return
-     */
     @RequestMapping(value = "/aboutString", method = RequestMethod.POST)
     @ApiOperation(value = "UUID、随机整数、截取、是否包含")
     public ResponseDto aboutString() {
