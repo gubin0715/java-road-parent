@@ -4,16 +4,17 @@
 springboot分模块开发
 
 #### 软件架构
-springboot、
-spring data jpa、
-mybatis、
-druid、
-redis、
-swagger、
-rabbitmq、
-nacos、
-scheduler、
-kafka
+Springboot、
+Spring Data Jpa、
+Mybatis、
+Druid、
+Redis、
+Swagger、
+RabbitMQ、
+Nacos、
+Scheduler、
+Kafka、
+ElasticSearch
 
 #### 码云特技
 

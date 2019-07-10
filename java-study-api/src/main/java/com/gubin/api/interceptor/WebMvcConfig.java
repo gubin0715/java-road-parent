@@ -27,7 +27,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
                 .excludePathPatterns("/testNacosData")
                 .excludePathPatterns("/addBackAdminList")
-                .excludePathPatterns("/backAdminLogin");
+                .excludePathPatterns("/backAdminLogin")
+                .excludePathPatterns("/articleList")
+                .excludePathPatterns("/addArticle")
+                .excludePathPatterns("/articleAllList");
     }
 
     //如果swagger排除后仍被拦截，放开代码
