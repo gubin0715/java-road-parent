@@ -15,8 +15,8 @@ import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import java.util.HashMap;
 import java.util.Map;
 
-//@Configuration
-//@EnableKafka
+@Configuration
+@EnableKafka
 public class KafkaConsumerConfig {
     @Value("${kafka.consumer.servers}")
     private String servers;

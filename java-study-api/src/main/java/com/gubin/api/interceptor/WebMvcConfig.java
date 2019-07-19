@@ -30,7 +30,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/backAdminLogin")
                 .excludePathPatterns("/articleList")
                 .excludePathPatterns("/addArticle")
-                .excludePathPatterns("/articleAllList");
+                .excludePathPatterns("/articleAllList")
+                .excludePathPatterns("/rabbitMq");
     }
 
     //如果swagger排除后仍被拦截，放开代码
