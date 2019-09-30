@@ -24,4 +24,7 @@ public class BackAdmin{
 	private String roleName;
 	/** 创建时间 */
 	private String createTime;
+
+	private Integer pageNum=1;
+	private Integer pageSize=10;
 }

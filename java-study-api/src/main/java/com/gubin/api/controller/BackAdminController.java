@@ -1,5 +1,7 @@
 package com.gubin.api.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.gubin.api.config.redis.TokenRedisUtils;
 import com.gubin.common.domain.BackAdmin;
 import com.gubin.common.dto.ResponseDto;
@@ -34,8 +36,9 @@ public class BackAdminController {
     @RequestMapping(value = "/getBackAdminList", method = RequestMethod.POST)
     public ResponseDto getBackAdminList(@RequestBody(required = false) BackAdmin backAdmin) {
         try {
+            PageHelper.startPage(backAdmin.getPageNum(),backAdmin.getPageSize());
             List<BackAdmin> list = backAdminService.selectBackAdminList(backAdmin);
-            return ResponseDto.SUCCESSDATA(list);
+            return ResponseDto.SUCCESSDATA(new PageInfo<>(list));
         } catch (Exception e) {
             log.error("获取后台用户列表异常", e);
             return ResponseDto.ERRORMSG("获取后台用户列表异常");
