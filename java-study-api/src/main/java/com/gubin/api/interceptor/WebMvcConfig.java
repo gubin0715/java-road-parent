@@ -32,7 +32,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/addArticle")
                 .excludePathPatterns("/articleAllList")
                 .excludePathPatterns("/rabbitMq")
-                .excludePathPatterns("/kafkaSend");
+                .excludePathPatterns("/kafkaSend")
+                .excludePathPatterns("/testThreadPool");
     }
 
     //如果swagger排除后仍被拦截，放开代码
