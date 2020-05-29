@@ -59,6 +59,12 @@
             <groupId>org.drools</groupId>
             <artifactId>drools-decisiontables</artifactId>
             <version>7.5.0.Final</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 </project>
