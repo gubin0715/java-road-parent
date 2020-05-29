@@ -7,7 +7,6 @@
         <artifactId>java-study-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.gubin</groupId>
     <artifactId>java-study-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -15,12 +14,6 @@
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>5.1.5.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
         <dependency>
             <groupId>com.gubin</groupId>
             <artifactId>java-study-common</artifactId>

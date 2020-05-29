@@ -72,6 +72,11 @@
             <artifactId>poi-excelant</artifactId>
             <version>3.11-beta2</version>
         </dependency>
+        <!-- Spring Boot Elasticsearch 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

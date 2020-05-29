@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="1 seconds">
+    <springProperty scope="context" name="logback.logStash.destination" source="logback.logStash.destination"/>
+    <!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} – %X{sessionId}: %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <!-- net.logstash.logback.appender.LogstashTcpSocketAppender logStash日志配置 -->
+    <appender name="logStash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <springProfile name="dev">
+            <destination>${logback.logStash.destination}</destination>
+            <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">
+                <customFields>{"appname":"java-study-task-dev"}</customFields> 
+            </encoder>
+        </springProfile>
+        <springProfile name="prod">
+            <destination>${logback.logStash.destination}</destination>
+            <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">
+                <customFields>{"appname":"java-study-task-prod"}</customFields> 
+            </encoder>
+        </springProfile>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>info</level>
+        </filter>
+    </appender>
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="logStash"/>
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
