@@ -1,5 +1,7 @@
 package com.gubin.api;
 
+import net.hasor.spring.boot.EnableHasor;
+import net.hasor.spring.boot.EnableHasorWeb;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,9 +13,11 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+@EnableHasor()
+@EnableHasorWeb()
 @EnableSwagger2
 @ServletComponentScan
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.gubin.api.config.hasor"})
 @EnableDiscoveryClient
 @ComponentScan(basePackages = {"com.gubin"})
 @EnableJpaRepositories(basePackages = {"com.gubin.repository"})
