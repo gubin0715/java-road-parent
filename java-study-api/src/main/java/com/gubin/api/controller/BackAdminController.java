@@ -3,6 +3,8 @@ package com.gubin.api.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.gubin.api.config.redis.TokenRedisUtils;
+import com.gubin.api.config.swagger.OperationControllerLog;
+import com.gubin.api.config.swagger.OperationType;
 import com.gubin.common.domain.BackAdmin;
 import com.gubin.common.dto.ResponseDto;
 import com.gubin.common.util.Algorithm;
@@ -34,6 +36,7 @@ public class BackAdminController {
 
     @ApiOperation(value = "获取后台用户列表")
     @RequestMapping(value = "/getBackAdminList", method = RequestMethod.POST)
+    @OperationControllerLog(description = "获取后台用户列表",actionType = OperationType.QUERY)
     public ResponseDto getBackAdminList(@RequestBody(required = false) BackAdmin backAdmin) {
         try {
             PageHelper.startPage(backAdmin.getPageNum(),backAdmin.getPageSize());
@@ -47,6 +50,7 @@ public class BackAdminController {
 
     @ApiOperation(value = "添加后台用户")
     @RequestMapping(value = "/addBackAdminList", method = RequestMethod.POST)
+    @OperationControllerLog(description = "添加后台用户",actionType = OperationType.ADD)
     public ResponseDto addBackAdminList(@RequestBody(required = false) BackAdmin backAdmin) {
         try {
             BackAdmin b = new BackAdmin();
