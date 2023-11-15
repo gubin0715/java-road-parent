@@ -18,8 +18,6 @@ ElasticSearch
 
 #### 码云特技
 
-1.swagger文档: http://localhost:6060/swagger-ui.html#/
+1.swagger文档: /swagger-ui.html#/
 
-2.druid监控页面 http://localhost:6060/druid/index.html
-
-3.springcloud项目：https://gitee.com/gubin0715/springcloud-study-road
+2.druid监控页面 /druid/index.html
